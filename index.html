@@ -1,1 +1,214 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Pedro02388 TV</title>
 
+<style>
+body{
+    margin:0;
+    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
+    background: radial-gradient(circle at top,#0f2027,#000);
+    color:white;
+    display:flex;
+    justify-content:center;
+}
+
+/* CONTAINER */
+.container{
+    width:100%;
+    max-width:400px;
+    padding:25px;
+    text-align:center;
+}
+
+/* AVATAR */
+.avatar{
+    width:110px;
+    height:110px;
+    border-radius:50%;
+    object-fit:cover;
+    border:3px solid #00ffe1;
+    box-shadow:
+        0 0 15px #00ffe1,
+        0 0 35px #00ffe1,
+        0 0 60px rgba(0,255,200,0.5);
+    animation:pulseGlow 2s infinite alternate;
+}
+
+@keyframes pulseGlow{
+    from{
+        box-shadow:
+            0 0 10px #00ffe1,
+            0 0 25px #00ffe1;
+    }
+    to{
+        box-shadow:
+            0 0 20px #00ffe1,
+            0 0 50px #00ffe1;
+    }
+}
+
+/* NOME */
+.name{
+    margin-top:15px;
+    font-size:22px;
+    font-weight:700;
+}
+
+/* SUB */
+.bio{
+    color:#aaa;
+    font-size:14px;
+    margin-bottom:20px;
+}
+
+/* AO VIVO */
+.live{
+    color:#ff3b3b;
+    font-weight:bold;
+    animation:blink 1s infinite;
+}
+@keyframes blink{50%{opacity:0.3;}}
+
+/* CARDS */
+.card{
+    background:rgba(255,255,255,0.05);
+    backdrop-filter:blur(10px);
+    border:1px solid rgba(255,255,255,0.1);
+    border-radius:16px;
+    padding:15px;
+    margin-bottom:15px;
+    text-align:left;
+}
+
+/* BOTÕES */
+.links a{
+    display:block;
+    padding:15px;
+    margin:12px 0;
+    border-radius:14px;
+    text-decoration:none;
+    font-weight:600;
+    transition:0.25s;
+}
+
+/* PRINCIPAL */
+.main{
+    background:linear-gradient(45deg,#00ffe1,#00ff88);
+    color:black;
+    box-shadow:0 0 20px rgba(0,255,200,0.6);
+}
+
+.main:hover{
+    transform:scale(1.05);
+}
+
+/* SECUNDÁRIO */
+.secondary{
+    background:rgba(255,255,255,0.05);
+    border:1px solid rgba(255,255,255,0.1);
+}
+
+/* POPUP */
+.popup{
+    position:fixed;
+    bottom:20px;
+    left:50%;
+    transform:translateX(-50%);
+    background:rgba(20,20,20,0.95);
+    padding:15px;
+    border-radius:14px;
+    width:85%;
+    max-width:320px;
+    display:none;
+}
+
+.popup button{
+    margin-top:10px;
+    padding:10px;
+    border:none;
+    border-radius:8px;
+    background:#5865F2;
+    color:white;
+    font-weight:bold;
+}
+
+.close{
+    position:absolute;
+    top:8px;
+    right:10px;
+    cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+<!-- PERFIL -->
+<img src="https://cdn.discordapp.com/attachments/1484010491075625000/1489682106471940269/lv_0_20260402131613.gif" class="avatar">
+
+<div class="name">
+📺 Pedro02388 TV <span class="live">🔴 AO VIVO</span>
+</div>
+
+<div class="bio">
+O canal de notícias 🚀
+</div>
+
+<!-- LINKS -->
+<div class="links">
+
+<a href="https://link.me/Pedro02388" class="main">
+🚀 Assistir agora
+</a>
+
+<a href="https://linkbio.co/Pedro02388" class="secondary">
+🌐 Meu Linkbio
+</a>
+
+<a href="https://link.me/Pedro02388" class="secondary">
+📰 Portal de Notícias
+</a>
+
+<a href="https://dsc.gg/Pedro02388" class="secondary">
+💬 Entrar no Discord
+</a>
+
+</div>
+
+<!-- CARD INFO -->
+<div class="card">
+<b>📰 Sobre</b><br>
+Canal focado em notícias, conteúdo ao vivo e comunidade.
+</div>
+
+<div class="card">
+<b>🔥 Objetivo</b><br>
+Expandir o canal e crescer a comunidade 🚀
+</div>
+
+</div>
+
+<!-- POPUP -->
+<div class="popup" id="popup">
+<span class="close" onclick="fechar()">✖</span>
+🔥 Entre no Discord!
+<button onclick="entrar()">Entrar</button>
+</div>
+
+<script>
+const popup=document.getElementById("popup");
+
+setTimeout(()=>popup.style.display="block",2000);
+setInterval(()=>popup.style.display="block",15000);
+
+function fechar(){popup.style.display="none";}
+function entrar(){window.open("https://dsc.gg/Pedro02388");}
+</script>
+
+</body>
+</html>
