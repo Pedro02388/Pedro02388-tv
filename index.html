@@ -1,213 +1,305 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Pedro02388 TV</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pedro02388 TV | Hub Oficial</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
+    <style>
+        :root {
+            --primary: #00ffe1;
+            --secondary: #7000ff;
+            --bg: #050505;
+            --glass: rgba(255, 255, 255, 0.05);
+            --glass-border: rgba(255, 255, 255, 0.1);
+        }
 
-<style>
-body{
-    margin:0;
-    font-family:-apple-system,BlinkMacSystemFont,"Segoe UI",Roboto;
-    background: radial-gradient(circle at top,#0f2027,#000);
-    color:white;
-    display:flex;
-    justify-content:center;
-}
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Inter', sans-serif;
+            background: radial-gradient(circle at top right, #1a0b2e, #050505);
+            color: white;
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            overflow-x: hidden;
+        }
 
-/* CONTAINER */
-.container{
-    width:100%;
-    max-width:400px;
-    padding:25px;
-    text-align:center;
-}
+        .container {
+            width: 100%;
+            max-width: 420px;
+            padding: 40px 20px;
+            text-align: center;
+            z-index: 1;
+        }
 
-/* AVATAR */
-.avatar{
-    width:110px;
-    height:110px;
-    border-radius:50%;
-    object-fit:cover;
-    border:3px solid #00ffe1;
-    box-shadow:
-        0 0 15px #00ffe1,
-        0 0 35px #00ffe1,
-        0 0 60px rgba(0,255,200,0.5);
-    animation:pulseGlow 2s infinite alternate;
-}
+        /* Efeito de Luz no Fundo */
+        .bg-glow {
+            position: fixed;
+            top: 0; left: 50%;
+            transform: translateX(-50%);
+            width: 300px;
+            height: 300px;
+            background: var(--primary);
+            filter: blur(120px);
+            opacity: 0.15;
+            z-index: 0;
+            pointer-events: none;
+        }
 
-@keyframes pulseGlow{
-    from{
-        box-shadow:
-            0 0 10px #00ffe1,
-            0 0 25px #00ffe1;
-    }
-    to{
-        box-shadow:
-            0 0 20px #00ffe1,
-            0 0 50px #00ffe1;
-    }
-}
+        /* AVATAR COM ANIMAÇÃO */
+        .avatar-wrapper {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
 
-/* NOME */
-.name{
-    margin-top:15px;
-    font-size:22px;
-    font-weight:700;
-}
+        .avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 4px solid var(--primary);
+            position: relative;
+            z-index: 2;
+        }
 
-/* SUB */
-.bio{
-    color:#aaa;
-    font-size:14px;
-    margin-bottom:20px;
-}
+        .avatar-ring {
+            position: absolute;
+            top: -5px; left: -5px; right: -5px; bottom: -5px;
+            border-radius: 50%;
+            border: 2px solid var(--primary);
+            animation: ripple 2s infinite;
+        }
 
-/* AO VIVO */
-.live{
-    color:#ff3b3b;
-    font-weight:bold;
-    animation:blink 1s infinite;
-}
-@keyframes blink{50%{opacity:0.3;}}
+        @keyframes ripple {
+            0% { transform: scale(1); opacity: 0.8; }
+            100% { transform: scale(1.3); opacity: 0; }
+        }
 
-/* CARDS */
-.card{
-    background:rgba(255,255,255,0.05);
-    backdrop-filter:blur(10px);
-    border:1px solid rgba(255,255,255,0.1);
-    border-radius:16px;
-    padding:15px;
-    margin-bottom:15px;
-    text-align:left;
-}
+        /* TIPOGRAFIA */
+        .name {
+            font-size: 26px;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            margin-bottom: 5px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 10px;
+        }
 
-/* BOTÕES */
-.links a{
-    display:block;
-    padding:15px;
-    margin:12px 0;
-    border-radius:14px;
-    text-decoration:none;
-    font-weight:600;
-    transition:0.25s;
-}
+        .live-tag {
+            background: #ff3b3b;
+            font-size: 10px;
+            padding: 4px 8px;
+            border-radius: 4px;
+            text-transform: uppercase;
+            animation: pulse 1.5s infinite;
+        }
 
-/* PRINCIPAL */
-.main{
-    background:linear-gradient(45deg,#00ffe1,#00ff88);
-    color:black;
-    box-shadow:0 0 20px rgba(0,255,200,0.6);
-}
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(255, 59, 59, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(255, 59, 59, 0); }
+            100% { transform: scale(1); }
+        }
 
-.main:hover{
-    transform:scale(1.05);
-}
+        .bio {
+            color: #999;
+            font-size: 15px;
+            margin-bottom: 30px;
+        }
 
-/* SECUNDÁRIO */
-.secondary{
-    background:rgba(255,255,255,0.05);
-    border:1px solid rgba(255,255,255,0.1);
-}
+        /* CONTADOR */
+        .counter-box {
+            font-size: 12px;
+            color: var(--primary);
+            margin-bottom: 20px;
+            font-family: monospace;
+            background: rgba(0, 255, 225, 0.1);
+            display: inline-block;
+            padding: 5px 12px;
+            border-radius: 20px;
+        }
 
-/* POPUP */
-.popup{
-    position:fixed;
-    bottom:20px;
-    left:50%;
-    transform:translateX(-50%);
-    background:rgba(20,20,20,0.95);
-    padding:15px;
-    border-radius:14px;
-    width:85%;
-    max-width:320px;
-    display:none;
-}
+        /* LINKS */
+        .links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 18px;
+            margin: 15px 0;
+            border-radius: 18px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: all 0.3s cubic-bezier(0.23, 1, 0.32, 1);
+            backdrop-filter: blur(10px);
+        }
 
-.popup button{
-    margin-top:10px;
-    padding:10px;
-    border:none;
-    border-radius:8px;
-    background:#5865F2;
-    color:white;
-    font-weight:bold;
-}
+        .main-btn {
+            background: linear-gradient(90deg, var(--primary), #00d4ff);
+            color: #000;
+            box-shadow: 0 10px 20px rgba(0, 255, 225, 0.3);
+        }
 
-.close{
-    position:absolute;
-    top:8px;
-    right:10px;
-    cursor:pointer;
-}
-</style>
+        .main-btn:hover {
+            transform: translateY(-3px) scale(1.02);
+            box-shadow: 0 15px 30px rgba(0, 255, 225, 0.5);
+        }
+
+        .sec-btn {
+            background: var(--glass);
+            color: white;
+            border: 1px solid var(--glass-border);
+        }
+
+        .sec-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            border-color: var(--primary);
+            transform: translateX(5px);
+        }
+
+        /* CARDS INFO */
+        .card-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 15px;
+            margin-top: 30px;
+        }
+
+        .card {
+            background: var(--glass);
+            border: 1px solid var(--glass-border);
+            padding: 15px;
+            border-radius: 20px;
+            text-align: left;
+            font-size: 13px;
+        }
+
+        .card b {
+            color: var(--primary);
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        /* POPUP */
+        #popup {
+            position: fixed;
+            bottom: 30px;
+            left: 50%;
+            transform: translate(-50%, 100px);
+            background: rgba(15, 15, 15, 0.9);
+            border: 1px solid var(--primary);
+            padding: 20px;
+            border-radius: 24px;
+            width: 80%;
+            max-width: 300px;
+            backdrop-filter: blur(15px);
+            transition: 0.5s transform ease;
+            z-index: 100;
+            display: block;
+            visibility: hidden;
+        }
+
+        #popup.show {
+            transform: translate(-50%, 0);
+            visibility: visible;
+        }
+
+        .popup-btn {
+            width: 100%;
+            padding: 12px;
+            border: none;
+            border-radius: 12px;
+            background: #5865F2;
+            color: white;
+            font-weight: bold;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            cursor: pointer;
+            opacity: 0.5;
+        }
+    </style>
 </head>
-
 <body>
 
+<div class="bg-glow"></div>
+
 <div class="container">
+    <div class="avatar-wrapper">
+        <div class="avatar-ring"></div>
+        <img src="https://cdn.discordapp.com/attachments/1484010491075625000/1489682106471940269/lv_0_20260402131613.gif" class="avatar" alt="Logo Pedro02388">
+    </div>
 
-<!-- PERFIL -->
-<img src="https://cdn.discordapp.com/attachments/1484010491075625000/1489682106471940269/lv_0_20260402131613.gif" class="avatar">
+    <div class="name">
+        Pedro02388 TV <span class="live-tag">LIVE</span>
+    </div>
 
-<div class="name">
-📺 Pedro02388 TV <span class="live">🔴 AO VIVO</span>
+    <div class="bio">O portal de notícias definitivo 🚀</div>
+
+    <div class="counter-box">
+        VISITAS: <span id="visit-count">0</span>
+    </div>
+
+    <div class="links">
+        <a href="https://link.me/Pedro02388" class="main-btn">🚀 ASSISTIR AGORA</a>
+        <a href="https://linkbio.co/Pedro02388" class="sec-btn">🌐 Meu Linkbio</a>
+        <a href="https://link.me/Pedro02388" class="sec-btn">📰 Portal de Notícias</a>
+        <a href="https://dsc.gg/Pedro02388" class="sec-btn">💬 Entrar no Discord</a>
+    </div>
+
+    <div class="card-grid">
+        <div class="card">
+            <b>📰 Sobre</b>
+            Focado em notícias reais e comunidade ativa.
+        </div>
+        <div class="card">
+            <b>🔥 Meta</b>
+            Alcançar o topo das lives de notícias!
+        </div>
+    </div>
 </div>
 
-<div class="bio">
-O canal de notícias 🚀
-</div>
-
-<!-- LINKS -->
-<div class="links">
-
-<a href="https://link.me/Pedro02388" class="main">
-🚀 Assistir agora
-</a>
-
-<a href="https://linkbio.co/Pedro02388" class="secondary">
-🌐 Meu Linkbio
-</a>
-
-<a href="https://link.me/Pedro02388" class="secondary">
-📰 Portal de Notícias
-</a>
-
-<a href="https://dsc.gg/Pedro02388" class="secondary">
-💬 Entrar no Discord
-</a>
-
-</div>
-
-<!-- CARD INFO -->
-<div class="card">
-<b>📰 Sobre</b><br>
-Canal focado em notícias, conteúdo ao vivo e comunidade.
-</div>
-
-<div class="card">
-<b>🔥 Objetivo</b><br>
-Expandir o canal e crescer a comunidade 🚀
-</div>
-
-</div>
-
-<!-- POPUP -->
-<div class="popup" id="popup">
-<span class="close" onclick="fechar()">✖</span>
-🔥 Entre no Discord!
-<button onclick="entrar()">Entrar</button>
+<div id="popup">
+    <span class="close-btn" onclick="togglePopup(false)">✕</span>
+    <div style="font-weight: 800; font-size: 18px;">Ei, psiu! 📢</div>
+    <p style="font-size: 14px; color: #ccc;">Não fique de fora da maior comunidade do Discord.</p>
+    <button class="popup-btn" onclick="window.open('https://dsc.gg/Pedro02388')">ENTRAR AGORA</button>
 </div>
 
 <script>
-const popup=document.getElementById("popup");
+    // Lógica do Contador (Local Storage)
+    function updateCounter() {
+        let visits = localStorage.getItem('visit_count');
+        if (visits === null) {
+            visits = 1;
+        } else {
+            visits = parseInt(visits) + 1;
+        }
+        localStorage.setItem('visit_count', visits);
+        document.getElementById('visit-count').innerText = visits.toString().padStart(4, '0');
+    }
 
-setTimeout(()=>popup.style.display="block",2000);
-setInterval(()=>popup.style.display="block",15000);
+    // Lógica do Popup
+    function togglePopup(show) {
+        const popup = document.getElementById('popup');
+        if(show) popup.classList.add('show');
+        else popup.classList.remove('show');
+    }
 
-function fechar(){popup.style.display="none";}
-function entrar(){window.open("https://dsc.gg/Pedro02388");}
+    // Inicialização
+    window.onload = () => {
+        updateCounter();
+        setTimeout(() => togglePopup(true), 3000); // Mostra após 3 segundos
+    };
 </script>
 
 </body>
