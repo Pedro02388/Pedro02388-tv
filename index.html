@@ -25,86 +25,33 @@
             background: white;
             border-radius: 20px;
             box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-            max-width: 500px;
+            max-width: 900px;
             width: 100%;
             padding: 40px 30px;
             animation: slideUp 0.6s ease-out;
         }
 
         @keyframes slideUp {
-            from {
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
+            from { opacity: 0; transform: translateY(30px); }
+            to { opacity: 1; transform: translateY(0); }
         }
 
-        .profile {
-            text-align: center;
-            margin-bottom: 30px;
-        }
+        .profile { text-align: center; margin-bottom: 30px; }
 
         .avatar {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
+            width: 120px; height: 120px; border-radius: 50%;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            margin: 0 auto 20px;
-            font-size: 50px;
+            display: flex; align-items: center; justify-content: center;
+            margin: 0 auto 20px; font-size: 50px;
             animation: pulse 2s infinite;
             box-shadow: 0 10px 30px rgba(102, 126, 234, 0.4);
         }
 
-        @keyframes pulse {
-            0%, 100% {
-                transform: scale(1);
-            }
-            50% {
-                transform: scale(1.05);
-            }
-        }
+        @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
 
-        .name {
-            font-size: 28px;
-            font-weight: 700;
-            color: #2d3748;
-            margin-bottom: 8px;
-        }
-
-        .badge {
-            display: inline-block;
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            color: white;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 12px;
-            font-weight: 600;
-            margin-bottom: 15px;
-            animation: fadeInScale 0.8s ease-out;
-        }
-
-        @keyframes fadeInScale {
-            from {
-                opacity: 0;
-                transform: scale(0.8);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        .bio {
-            color: #718096;
-            font-size: 14px;
-            line-height: 1.6;
-        }
+        .name { font-size: 28px; font-weight: 700; color: #2d3748; margin-bottom: 8px; }
+        .badge { display: inline-block; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 6px 16px; border-radius: 20px; font-size: 12px; font-weight: 600; margin-bottom: 15px; }
+        .bio { color: #718096; font-size: 14px; line-height: 1.6; }
 
         .buttons {
             display: grid;
@@ -136,14 +83,7 @@
             grid-column: 1 / -1;
         }
 
-        .btn-primary:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 24px rgba(102, 126, 234, 0.4);
-        }
-
-        .btn-primary:active {
-            transform: translateY(-2px);
-        }
+        .btn-primary:hover { transform: translateY(-4px); box-shadow: 0 12px 24px rgba(102, 126, 234, 0.4); }
 
         .btn-secondary {
             background: #f7fafc;
@@ -157,22 +97,10 @@
             transform: translateY(-2px);
         }
 
-        .btn-secondary:active {
-            transform: translateY(0);
-        }
-
-        .btn span {
-            font-size: 16px;
-        }
-
-        .btn-text {
-            font-size: 10px;
-        }
-
         .cards {
             display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 12px;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 16px;
             margin: 30px 0;
         }
 
@@ -193,133 +121,23 @@
             box-shadow: 0 8px 20px rgba(102, 126, 234, 0.15);
         }
 
-        .card-icon {
-            font-size: 28px;
-            margin-bottom: 10px;
-        }
+        .card-icon { font-size: 42px; margin-bottom: 12px; }
+        .card-title { font-size: 16px; font-weight: 700; color: #2d3748; margin-bottom: 8px; }
+        .card-description { font-size: 13px; color: #718096; line-height: 1.5; }
 
-        .card-title {
-            font-size: 14px;
-            font-weight: 600;
-            color: #2d3748;
-            margin-bottom: 8px;
-        }
-
-        .card-description {
-            font-size: 12px;
-            color: #718096;
-            line-height: 1.4;
-        }
-
-        .modal {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            background: rgba(0, 0, 0, 0.5);
-            align-items: center;
-            justify-content: center;
-            z-index: 1000;
-            animation: fadeIn 0.3s ease-out;
-        }
-
-        .modal.active {
-            display: flex;
-        }
-
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-            }
-            to {
-                opacity: 1;
-            }
-        }
-
-        .modal-content {
-            background: white;
-            border-radius: 20px;
-            padding: 40px 30px;
-            max-width: 400px;
-            width: 90%;
-            text-align: center;
-            animation: popIn 0.4s ease-out;
-            box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
-        }
-
-        @keyframes popIn {
-            from {
-                opacity: 0;
-                transform: scale(0.9);
-            }
-            to {
-                opacity: 1;
-                transform: scale(1);
-            }
-        }
-
-        .modal-icon {
-            font-size: 50px;
-            margin-bottom: 20px;
-        }
-
-        .modal-title {
-            font-size: 24px;
-            font-weight: 700;
-            color: #2d3748;
-            margin-bottom: 15px;
-        }
-
-        .modal-text {
-            color: #718096;
-            font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-
-        .modal-btn {
+        .watch-btn {
+            margin-top: 15px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             border: none;
-            padding: 14px 32px;
-            border-radius: 10px;
+            padding: 10px 20px;
+            border-radius: 8px;
             font-size: 14px;
             font-weight: 600;
             cursor: pointer;
-            width: 100%;
-            transition: all 0.3s ease;
             text-decoration: none;
             display: inline-block;
-        }
-
-        .modal-btn:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 12px 24px rgba(102, 126, 234, 0.4);
-        }
-
-        .modal-btn:active {
-            transform: translateY(0);
-        }
-
-        .close-modal {
-            color: #cbd5e0;
-            font-size: 28px;
-            font-weight: bold;
-            cursor: pointer;
-            transition: color 0.2s;
-            position: absolute;
-            top: 20px;
-            right: 20px;
-        }
-
-        .close-modal:hover {
-            color: #2d3748;
-        }
-
-        .modal-content {
-            position: relative;
+            width: 100%;
         }
 
         .divider {
@@ -328,26 +146,19 @@
             margin: 30px 0;
         }
 
+        .section-title {
+            font-size: 22px;
+            font-weight: 700;
+            color: #2d3748;
+            margin: 25px 0 15px;
+            text-align: center;
+        }
+
         @media (max-width: 600px) {
-            .container {
-                padding: 30px 20px;
-            }
-
-            .name {
-                font-size: 24px;
-            }
-
-            .buttons {
-                grid-template-columns: 1fr;
-            }
-
-            .btn-primary {
-                grid-column: 1;
-            }
-
-            .cards {
-                grid-template-columns: 1fr;
-            }
+            .container { padding: 30px 20px; }
+            .name { font-size: 24px; }
+            .buttons { grid-template-columns: 1fr; }
+            .btn-primary { grid-column: 1; }
         }
     </style>
 </head>
@@ -357,18 +168,18 @@
             <div class="avatar">📺</div>
             <h1 class="name">Pedro02388 TV</h1>
             <span class="badge">🟢 ONLINE</span>
-            <p class="bio">Encontre diversos canais do Telegram organizados em um só lugar.</p>
+            <p class="bio">Encontre diversos canais do Telegram e filmes organizados em um só lugar.</p>
         </div>
 
         <div class="buttons">
             <button class="btn btn-primary" id="catalogBtn">
                 <span>📂</span>
-                <div class="btn-text">Acessar Catálogo</div>
+                <div class="btn-text">Acessar Catálogo Completo</div>
             </button>
-            <button class="btn btn-secondary">
+            <a href="https://t.me/+ZCkkrfcTu34xZWQ5" target="_blank" class="btn btn-secondary">
                 <span>📢</span>
                 <div class="btn-text">Canal Oficial no Telegram</div>
-            </button>
+            </a>
             <button class="btn btn-secondary">
                 <span>🌐</span>
                 <div class="btn-text">Servidor do Discord</div>
@@ -377,6 +188,25 @@
                 <span>💬</span>
                 <div class="btn-text">Comunidade Discord</div>
             </button>
+        </div>
+
+        <div class="divider"></div>
+
+        <h2 class="section-title">🎥 Angry Birds</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="card-icon">🐦</div>
+                <div class="card-title">Angry Birds 1</div>
+                <div class="card-description">O filme original (2016)</div>
+                <a href="https://www.tokyvideo.com/br/video/angry-birds-2-o-filme-2019-animacao-comedia" target="_blank" class="watch-btn">▶ Assistir no TokyVideo</a>
+            </div>
+
+            <div class="card">
+                <div class="card-icon">🐦🔥</div>
+                <div class="card-title">Angry Birds 2</div>
+                <div class="card-description">A continuação (2019)</div>
+                <a href="https://youtu.be/zGQIQxXN1Hk" target="_blank" class="watch-btn">▶ Assistir no YouTube</a>
+            </div>
         </div>
 
         <div class="divider"></div>
@@ -390,12 +220,12 @@
             <div class="card">
                 <div class="card-icon">🚀</div>
                 <div class="card-title">Atualizações</div>
-                <div class="card-description">Novos canais são adicionados regularmente.</div>
+                <div class="card-description">Novos canais e filmes são adicionados regularmente.</div>
             </div>
         </div>
     </div>
 
-    <!-- Modal/Popup -->
+    <!-- Modal -->
     <div class="modal" id="modalPopup">
         <div class="modal-content">
             <span class="close-modal" id="closeModal">&times;</span>
@@ -407,51 +237,15 @@
     </div>
 
     <script>
-        // Modal functionality
         const modal = document.getElementById('modalPopup');
         const catalogBtn = document.getElementById('catalogBtn');
         const closeModal = document.getElementById('closeModal');
 
-        catalogBtn.addEventListener('click', function() {
-            modal.classList.add('active');
-        });
+        catalogBtn.addEventListener('click', () => modal.classList.add('active'));
+        closeModal.addEventListener('click', () => modal.classList.remove('active'));
+        modal.addEventListener('click', (e) => { if (e.target === modal) modal.classList.remove('active'); });
 
-        closeModal.addEventListener('click', function() {
-            modal.classList.remove('active');
-        });
-
-        modal.addEventListener('click', function(e) {
-            if (e.target === modal) {
-                modal.classList.remove('active');
-            }
-        });
-
-        // Prevent modal from closing when clicking on modal-content
-        document.querySelector('.modal-content').addEventListener('click', function(e) {
-            e.stopPropagation();
-        });
-
-        // Button interactions
-        const buttons = document.querySelectorAll('.btn-secondary');
-        buttons.forEach(btn => {
-            btn.addEventListener('click', function() {
-                this.style.transform = 'scale(0.95)';
-                setTimeout(() => {
-                    this.style.transform = '';
-                }, 100);
-            });
-        });
-
-        // Card hover animation
-        const cards = document.querySelectorAll('.card');
-        cards.forEach(card => {
-            card.addEventListener('mouseenter', function() {
-                this.style.animation = 'none';
-                setTimeout(() => {
-                    this.style.animation = '';
-                }, 10);
-            });
-        });
+        document.querySelector('.modal-content').addEventListener('click', (e) => e.stopPropagation());
     </script>
 </body>
 </html>
