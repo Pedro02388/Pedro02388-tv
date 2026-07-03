@@ -61,7 +61,7 @@
         .name { 
             font-size: 28px; 
             font-weight: 700; 
-            color: #2d3748; 
+            color: #1e2937; 
             margin-bottom: 8px; 
         }
         
@@ -69,31 +69,33 @@
             display: inline-block; 
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); 
             color: white; 
-            padding: 6px 16px; 
+            padding: 6px 18px; 
             border-radius: 20px; 
-            font-size: 12px; 
+            font-size: 13px; 
             font-weight: 600; 
             margin-bottom: 15px; 
         }
         
         .bio { 
-            color: #718096; 
-            font-size: 14px; 
+            color: #64748b; 
+            font-size: 15px; 
             line-height: 1.6; 
+            max-width: 500px;
+            margin: 0 auto;
         }
 
         .buttons {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 12px;
-            margin: 30px 0;
+            margin: 35px 0;
         }
 
         .btn {
-            padding: 12px 16px;
+            padding: 14px 16px;
             border: none;
-            border-radius: 10px;
-            font-size: 12px;
+            border-radius: 12px;
+            font-size: 13px;
             font-weight: 600;
             cursor: pointer;
             transition: all 0.3s ease;
@@ -102,8 +104,8 @@
             flex-direction: column;
             align-items: center;
             justify-content: center;
-            gap: 4px;
-            min-height: 80px;
+            gap: 5px;
+            min-height: 85px;
         }
 
         .btn-primary {
@@ -114,17 +116,17 @@
 
         .btn-primary:hover { 
             transform: translateY(-4px); 
-            box-shadow: 0 12px 24px rgba(102, 126, 234, 0.4); 
+            box-shadow: 0 15px 30px rgba(102, 126, 234, 0.4); 
         }
 
         .btn-secondary {
-            background: #f7fafc;
-            color: #2d3748;
+            background: #f8fafc;
+            color: #1e2937;
             border: 2px solid #e2e8f0;
         }
 
         .btn-secondary:hover {
-            background: #edf2f7;
+            background: #f1f5f9;
             border-color: #cbd5e0;
             transform: translateY(-2px);
         }
@@ -132,15 +134,15 @@
         .cards {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 16px;
+            gap: 18px;
             margin: 30px 0;
         }
 
         .card {
-            background: #f7fafc;
+            background: #f8fafc;
             border: 2px solid #e2e8f0;
             border-radius: 12px;
-            padding: 20px;
+            padding: 22px;
             text-align: center;
             transition: all 0.3s ease;
             cursor: pointer;
@@ -148,37 +150,37 @@
 
         .card:hover {
             border-color: #667eea;
-            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05) 0%, rgba(118, 75, 162, 0.05) 100%);
-            transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(102, 126, 234, 0.15);
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.05), rgba(118, 75, 162, 0.05));
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(102, 126, 234, 0.15);
         }
 
         .card-icon { 
-            font-size: 42px; 
+            font-size: 44px; 
             margin-bottom: 12px; 
         }
         
         .card-title { 
-            font-size: 16px; 
+            font-size: 17px; 
             font-weight: 700; 
-            color: #2d3748; 
-            margin-bottom: 8px; 
+            color: #1e2937; 
+            margin-bottom: 6px; 
         }
         
         .card-description { 
-            font-size: 13px; 
-            color: #718096; 
+            font-size: 13.5px; 
+            color: #64748b; 
             line-height: 1.5; 
         }
 
         .watch-btn {
-            margin-top: 15px;
+            margin-top: 18px;
             background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
             color: white;
             border: none;
-            padding: 10px 20px;
+            padding: 12px 20px;
             border-radius: 8px;
-            font-size: 14px;
+            font-size: 14.5px;
             font-weight: 600;
             cursor: pointer;
             text-decoration: none;
@@ -189,14 +191,14 @@
         .divider {
             height: 2px;
             background: linear-gradient(90deg, transparent, #e2e8f0, transparent);
-            margin: 30px 0;
+            margin: 35px 0;
         }
 
         .section-title {
-            font-size: 22px;
+            font-size: 23px;
             font-weight: 700;
-            color: #2d3748;
-            margin: 25px 0 15px;
+            color: #1e2937;
+            margin: 25px 0 18px;
             text-align: center;
         }
 
@@ -208,7 +210,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.7);
+            background: rgba(0, 0, 0, 0.75);
             align-items: center;
             justify-content: center;
             z-index: 1000;
@@ -244,7 +246,7 @@
         }
 
         .close-modal:hover {
-            color: #2d3748;
+            color: #1e2937;
         }
 
         .modal-icon {
@@ -255,11 +257,11 @@
         .modal-title {
             font-size: 22px;
             margin-bottom: 10px;
-            color: #2d3748;
+            color: #1e2937;
         }
 
         .modal-text {
-            color: #718096;
+            color: #64748b;
             margin-bottom: 25px;
             line-height: 1.5;
         }
@@ -274,17 +276,21 @@
             display: inline-block;
         }
 
-        /* Disclaimer */
+        /* Disclaimer Netflix Style */
         .disclaimer {
-            margin-top: 30px;
-            padding: 15px 20px;
+            margin-top: 45px;
+            padding: 25px 30px;
             background: #f8fafc;
             border: 1px solid #e2e8f0;
-            border-radius: 10px;
-            font-size: 13px;
-            color: #64748b;
-            text-align: center;
-            line-height: 1.5;
+            border-radius: 12px;
+            font-size: 13.8px;
+            color: #475569;
+            line-height: 1.75;
+            text-align: justify;
+        }
+
+        .disclaimer strong {
+            color: #1e2937;
         }
 
         @media (max-width: 600px) {
@@ -344,10 +350,35 @@
 
         <div class="divider"></div>
 
+        <!-- Nova Seção: Canais Recomendados -->
+        <h2 class="section-title">📺 Canais de Filmes e Séries</h2>
+        <div class="cards">
+            <div class="card">
+                <div class="card-icon">🎬</div>
+                <div class="card-title">Lista Filmes e Séries</div>
+                <div class="card-description">Grande lista de canais atualizada</div>
+                <a href="https://t.me/ListaFilmesSeries" target="_blank" class="watch-btn">Acessar Lista</a>
+            </div>
+            <div class="card">
+                <div class="card-icon">📥</div>
+                <div class="card-title">Baixar Séries MP4</div>
+                <div class="card-description">Séries em qualidade boa</div>
+                <a href="https://t.me/BaixarSeriesMP4Club" target="_blank" class="watch-btn">Entrar no Canal</a>
+            </div>
+            <div class="card">
+                <div class="card-icon">🍿</div>
+                <div class="card-title">Ultra Filmes</div>
+                <div class="card-description">Filmes e Lançamentos</div>
+                <a href="https://t.me/ultrafilmesbr" target="_blank" class="watch-btn">Entrar no Canal</a>
+            </div>
+        </div>
+
+        <div class="divider"></div>
+
         <div class="cards">
             <div class="card">
                 <div class="card-icon">📂</div>
-                <div class="card-title">Catálogo</div>
+                <div class="card-title">Catálogo Completo</div>
                 <div class="card-description">Navegue pelos canais organizados por categorias.</div>
             </div>
             <div class="card">
@@ -357,11 +388,17 @@
             </div>
         </div>
 
-        <!-- Disclaimer -->
+        <!-- Disclaimer Netflix Style -->
         <div class="disclaimer">
-            <strong>⚠️ Aviso Legal:</strong> Este site é totalmente legalizado. 
-            Apenas compartilhamos links públicos de plataformas como YouTube e TokyVideo.com. 
-            Todo o conteúdo é de responsabilidade dos respectivos sites originais.
+            <strong>⚠️ Aviso Legal</strong><br><br>
+            
+            O uso do Pedro02388 TV é de total responsabilidade do usuário. Este site funciona apenas como um catálogo e agregador de links públicos disponíveis na internet.<br><br>
+            
+            Não hospedamos, armazenamos ou transmitimos nenhum conteúdo. Todos os filmes, séries e transmissões são fornecidos por plataformas terceiras.<br><br>
+            
+            Qualquer questão relacionada a direitos autorais deve ser direcionada aos detentores dos direitos ou às plataformas onde o conteúdo está hospedado.<br><br>
+            
+            <strong>Contato:</strong> Pedro02388.TV@proton.me
         </div>
     </div>
 
@@ -393,7 +430,6 @@
             if (e.target === modal) modal.classList.remove('active');
         });
 
-        // Prevent closing when clicking inside modal content
         document.querySelector('.modal-content').addEventListener('click', (e) => {
             e.stopPropagation();
         });
